@@ -10,28 +10,66 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="/Users/didi/Documents/GitHub/vanilla-weather-app/src/styles.css"
-    />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="container">
-      <h1>
-        New York
-      </h1>
-      <ul>
-        <li>
-          Friday 05:00
-        </li>
-        <li>
-          Clear
-        </li>
-      </ul>
-      <div class="row">
-        <div class="col-md-6"></div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>
+              New York
+            </h1>
+            <ul>
+              <li>
+                Monday 12:18
+              </li>
+              <li>
+                Clear
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="Clear"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong>12</strong
+                  ><span class="units">°C | <a href="http://">°F</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>
+                  Precipitation: 0%
+                </li>
+                <li>
+                  Humidity: 73%
+                </li>
+                <li>
+                  Wind: 2 km/h
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <footer>
+          <small>
+            <a
+              href="https://github.com/didiBonocore/vanilla-weather-app"
+              target="_blank"
+              >Open-source code</a
+            >
+            by Didi Bonocore
+          </small>
+        </footer>
       </div>
     </div>
-    <script src="/Users/didi/Documents/GitHub/vanilla-weather-app/src/app.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
