@@ -48,6 +48,10 @@ function search(city) {
   let apiKey = "47e6a1b307b4c97b8cb75b4caf8c3075";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&
+exclude={part}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -73,6 +77,7 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
@@ -83,5 +88,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 
 search("Porto");
