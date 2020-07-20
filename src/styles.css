@@ -26,6 +26,10 @@ li {
   line-height: 1.188rem;
 }
 
+li::first-letter {
+  text-transform: capitalize;
+}
+
 .weather-app-wrapper {
   max-width: 37.5rem;
   margin: 1.875rem auto;
