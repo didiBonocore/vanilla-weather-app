@@ -1,9 +1,13 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-  hours < 10 ? `0${hours}` : `${hours}`;
+  if (hours < 10) {
+    return `0${hours}`;
+  }
   let minutes = date.getMinutes();
-  minutes < 10 ? `0${minutes}` : `${minutes}`;
+  if (minutes < 10) {
+    return `0${minutes}`;
+  }
   let days = [
     "Sunday",
     "Monday",
@@ -38,8 +42,17 @@ function displayTemperature(response) {
   );
 }
 
-let apiKey = "47e6a1b307b4c97b8cb75b4caf8c3075";
-let city = "Porto";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "47e6a1b307b4c97b8cb75b4caf8c3075";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
