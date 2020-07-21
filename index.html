@@ -19,14 +19,14 @@
         <div class="weather-app">
           <form id="search-form" class="mb-3">
             <div class="row">
-              <div class="col-8">
-                <input type="search" placeholder="Type a city..." class="form-control" id="city-input"/>
+              <div class="col-6">
+                <input type="search" placeholder="Type a city..." class="form-control" id="city-input" autocomplete="off"/>
               </div>
-              <div class="col-2">
-                <input type="submit" value="Search" class="btn btn-secondary w-100"/>
+              <div class="col-3">
+                <input type="submit" value="Search" class="btn btn-light w-100"/>
               </div>
-              <div class="col-2">
-                <input type="submit" value="Current" class="btn btn-secondary w-100"/>
+              <div class="col-3">
+                <input type="submit" value="Your Location" class="btn btn-light w-100" id="location-button"/>
               </div>
             </div>
           </form>
@@ -61,67 +61,15 @@
                 <li>
                   Wind: <span id="wind"></span>km/h
                 </li>
+                <li>
+                  Feels like: <span id="feels-like"></span>°
+                </li>
               </ul>
             </div>
           </div>
-          <div class="row weather-forecast">
-            <div class="col-2">
-              <h3>
-                Sun
-              </h3>
-              <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png" alt=""/>
-              <div class="weather-forecast-temperature">
-                <strong>22°</strong> 17°
-              </div>
-            </div>
-            <div class="col-2">
-              <h3>
-                Mon
-              </h3>
-              <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png" alt=""/>
-              <div class="weather-forecast-temperature">
-                <strong>22°</strong> 17°
-              </div>
-            </div>
-             <div class="col-2">
-              <h3>
-                Mon
-              </h3>
-              <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png" alt=""/>
-              <div class="weather-forecast-temperature">
-                <strong>22°</strong> 17°
-              </div>
-            </div>
-             <div class="col-2">
-              <h3>
-                Mon
-              </h3>
-              <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png" alt=""/>
-              <div class="weather-forecast-temperature">
-                <strong>22°</strong> 17°
-              </div>
-            </div>
-             <div class="col-2">
-              <h3>
-                Mon
-              </h3>
-              <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png" alt=""/>
-              <div class="weather-forecast-temperature">
-                <strong>22°</strong> 17°
-              </div>
-            </div>
-             <div class="col-2">
-              <h3>
-                Mon
-              </h3>
-              <img src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png" alt=""/>
-              <div class="weather-forecast-temperature">
-                <strong>22°</strong> 17°
-              </div>
-            </div>
+          <div class="row weather-forecast" id="forecast"></div>
           </div>
-        </div>
-        <footer>
+          <footer>
           <small>
             <a
               href="https://github.com/didiBonocore/vanilla-weather-app"
@@ -131,6 +79,7 @@
             by Didi Bonocore
           </small>
         </footer>
+        </div>
       </div>
     </div>
     <script src="src/app.js"></script>
